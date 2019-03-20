@@ -1,0 +1,182 @@
+@charset "gb2312";
+/* css */
+* {
+    margin: 0;
+    padding: 0
+}
+
+body {
+    font: 15px "Microsoft YaHei", Arial, Helvetica, sans-serif;
+    color: #555;
+    background: #efefef;
+    line-height: 1.5;
+}
+
+img {
+    border: 0;
+    display: block
+}
+
+ul, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #555
+}
+
+a:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: " ";
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    zoom: 1;
+}
+
+.blank {
+    height: 20px;
+    overflow: hidden;
+    width: 100%;
+    margin: auto;
+    clear: both
+}
+
+.f_l {
+    float: left
+}
+
+.f_r {
+    float: right
+}
+
+article {
+    width: 1000px;
+    margin: 80px auto 0;
+    overflow: hidden;
+    z-index: 999
+}
+
+.container {
+    width: 1000px;
+    margin: auto
+}
+
+/*header*/
+.header-navigation {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 124px;
+    text-align: center;
+    line-height: 60px;
+    background: rgba(255,255,255,.9);
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+    z-index: 9999;
+}
+.wrapper {
+    width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+.branding {
+    width: 258px;
+    height: 125px;
+    padding: 23px 0;
+    position: relative;
+    box-sizing: border-box;
+    display: table-cell;
+}
+.branding .logo {
+    display: block;
+}
+.branding .logo img {
+    width: 66px;
+    height: 69px;
+}
+.branding h1 {
+    position: absolute;
+    left: 72px;
+    top: 29px;
+    width: 40px;
+    color: #2C2C2C;
+    font-size: 28px;
+    line-height: 29px;
+}
+nav {
+    display: table-cell;
+    vertical-align: middle;
+    max-width: 520px;
+}
+nav ul {
+    height: 46px;
+    border-top: 1px solid #1c1c1c;
+    border-bottom: 1px solid #1c1c1c;
+}
+nav li{
+    display: table-cell;
+    vertical-align: middle;
+}
+nav li a {
+    display: block;
+    padding: 0 16px;
+    line-height: 46px;
+}
+.searchbox {
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+}
+.searchbox input {
+    border: 1px solid #666666;
+    color: #8d9095;
+    line-height: 13px;
+    height: 36px;
+    position: absolute;
+    top: 42px;
+    box-sizing: border-box;
+}
+.searchbox .textinput {
+    left: 55px;
+    width: 182px;
+    padding: 2px 4px;
+    font-size: 13px;
+    background:rgba(255,255,255,0.1);
+}
+.searchbox .submitinput {
+    left: 204px;
+    border-left:none;
+    background-color: #666;
+    color: #fff;
+    padding: 2px 4px;
+    font-size: 12px;
+}
+
+.slideDown {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transition: transform .5s ease-out;
+    -o-transition: transform .5s ease-out;
+    transition: transform .5s ease-out;
+}
+.slideUp {
+    -webkit-transform: translateY(-124px);
+    -ms-transform: translateY(-124px);
+    -o-transform: translateY(-124px);
+    transform: translateY(-124px);
+    -webkit-transition: transform .5s ease-out;
+    -o-transition: transform .5s ease-out;
+    transition: transform .5s ease-out;
+}
+/*article*/

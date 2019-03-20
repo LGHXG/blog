@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <title>Title</title>
+    <style>
+        .biji-content {
+            width: 1000px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<span><i class="fa fa-camera-retro fa-4x"></i></span>
+<div id="box">
+    <div id="content">
+        <h4>皮质腕表 水晶刻度大气表盘</h4>
+        <p>瑞典 | Daniel Wellington | 价格:￥1233.24</p>
+        <div id="spread">
+            <img src="images/pic.jpg" alt="">
+            <p>税费：进口税 预计146.76元</p>
+            <p>物流：香港仓发货 至中国海关 至杭州市</p>
+            <p>运费：0.00 24：00前付款,预计15日内送达</p>
+        </div>
+    </div>
+    <button id="btn">展开</button>
+</div>
+<script>
+    /*获得btn*/
+    var btn = document.getElementById('btn');
+    var spread = document.getElementById('spread');
+    var iSpread = false;
+    /*高度*/
+    var height = spread.scrollHeight;
+    /*总时间*/
+    var time = 420;
+    /*间隔*/
+    var interval = 8.4;
+    /*速度*/
+    var speed = height/(time/interval);
+    /*点击事件*/
+    btn.onclick = function (e) {
+        btn.disabled = 'disabled';
+        if(!iSpread){
+            var speeds = 0;
+            var timer = setInterval(function () {
+                speeds += speed
+                spread.style.height = speeds + 'px';
+
+                if(parseInt(spread.style.height) >=height){
+                    clearTimeout(timer);
+                    btn.disabled = '';
+                }
+            },interval);
+            this.innerHTML = '收起';
+        }else {
+            var speeds = height;
+            this.innerHTML = '展开';
+            var timer = setInterval(function () {
+                speeds -= speed;
+                spread.style.height = speeds + 'px';
+                if(speeds <= 0){
+                    clearTimeout(timer);
+                    btn.disabled = '';
+                }
+            },interval)
+        }
+        iSpread = !iSpread;
+    }
+
+</script>
+
+<div class="biji-content" id="content">
+    <span> 杨青，女，一个80后草根女站长！09年入行。一直潜心研究web前端技术，一边工作一边积累经验，分享一些个人博客模板，以及SEO优化等心得。我入行早，大家也亲切的叫我“青姐”。
+    SEO奋斗了将近两年时间，个人博客网站百度排名也从之前的30页后，排到了第一页。期间有很多的不容易，但是都没有放弃过。入了这一行，就深深的喜欢上它。
+    </span>
+</div>
+<script>
+    (function () {
+        var len = 100; // 默认显示的字数
+        var content = document.getElementById("content"); // content 获取内容 div 对象
+        var text = content.innerHTML;  // text 为内容
+        var span = document.createElement("span"); // 创建一个 SPAN 标签
+        var n = document.createElement("a");  // 创建一个 A 标签
+        span.innerHTML = text.substring(0, len); // SPAN 标签的内容为 text 的前 len 个字符
+        n.innerHTML = text.length > len ? "...展开" : ""; // 创建的 A 标签内容，如果内容字数大于 len，那么为“..展开”，否则为空
+        n.href = "javascript:void(0)"; // 设置 A 标签的链接地址（随意）
+        n.onclick = function () { // 点击 A 链接执行下面函数
+            // 如果 A 标签的内容为“..展开”，那么 A 标签内容变成“收起”，SPAN 标签的内容为 DIV 全部内容，否则内容为前 len 个字符
+            if (n.innerHTML == "...展开") {
+                n.innerHTML = "收起";
+                span.innerHTML = text;
+            } else {
+                n.innerHTML = "...展开";
+                span.innerHTML = text.substring(0, len);
+            }
+        }
+        content.innerHTML = "";   // 设置 DIV 内容为空
+        content.appendChild(span); // 把 SPAN 元素加到 DIV 中
+        content.appendChild(n);   // 把 A 元素加到 DIV 中
+    })();
+</script>
+</body>
+</html>
