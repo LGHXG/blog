@@ -4,6 +4,9 @@
     width: 1000px;
     margin: 0 auto;
     padding-top: 124px;
+    padding-bottom: 20px;
+    background: #fff;
+    overflow: hidden;
 }
 .banner-wrap {
     position: relative;
@@ -30,7 +33,7 @@
 .imginfo {
     z-index: 9;
     position: absolute;
-    font-size: 26px;
+    font-size: 22px;
     color: #FFF;
     display: block;
     overflow: hidden;
@@ -83,11 +86,10 @@
 /*main*/
 .main {
     width: 1000px;
-    margin: 20px auto;
+    margin: 0 auto;
     padding: 10px;
     overflow: hidden;
     box-sizing: border-box;
-    border-top: 1px solid #88abda;
     background-color: #fff;
 }
 .main-wrap {
@@ -117,10 +119,74 @@
     width: 205px;
 }
 .main-wrap .left-sidebar .about .info {
-    padding-top: 16px;
+    margin-top: 16px;
+    padding-left: 10px;
+    border-left: 5px solid #88abda;
 }
 .main-wrap .left-sidebar .about .info p {
-
+    font-size: 14px;
+}
+.main-wrap .left-sidebar .about ul.contact {
+    padding-top: 20px;
+    position: relative;
+}
+.main-wrap .left-sidebar .about .contact li{
+    background-image: url(../img/social_icon_24x24.png);
+    background-repeat: no-repeat;
+    height: 24px;
+    width: 24px;
+    display: inline-block;
+    border-radius: 50%;
+}
+.main-wrap .left-sidebar .about .contact li.wechat {
+    background-position: 0 0;
+}
+.main-wrap .left-sidebar .about .contact li.wechat:hover:after,
+.main-wrap .left-sidebar .about .contact li.qq:hover:after {
+    position: absolute;
+    left: 6px;
+    top: 44px;
+    content: '';
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-bottom: 6px solid #88abda;
+}
+.main-wrap .left-sidebar .about .contact li.qq:hover:after {
+    left: 64px;
+    top: 44px;
+}
+.main-wrap .left-sidebar .about .contact li.wechat:hover:before,
+.main-wrap .left-sidebar .about .contact li.qq:hover:before {
+    position: absolute;
+    left: 0;
+    top: 50px;
+    content: '';
+    width: 140px;
+    height: 140px;
+    border: 1px solid #88abda;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px #ccc;
+    background: url("../img/wechat.jpg") center/140px 140px;
+}
+.main-wrap .left-sidebar .about .contact li.qq:hover:before {
+    background: url("../img/qq.jpg") center/140px 140px;
+}
+.main-wrap .left-sidebar .about .contact li.github {
+    background-position: -72px 0;
+}
+.main-wrap .left-sidebar .about .contact li.qq {
+    background-position: -48px 0;
+}
+.main-wrap .left-sidebar .about .contact li.phone {
+    background-position: -528px 0;
+}
+.main-wrap .left-sidebar .about .contact li.email {
+    background-position: -480px 0;
+}
+.main-wrap .left-sidebar .about .contact li a {
+    display: block;
+    width: 24px;
+    height: 24px;
 }
 .main-wrap .content-wrap {
     width: 75%;
