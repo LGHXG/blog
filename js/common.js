@@ -3,7 +3,7 @@ $(document).ready(function () {
     //banner
     $('#banner').easyFader();
 
-    // nav
+    // nav 隐藏
     var header = $("header");
     $(window).scroll(function(){
         if( $(document).scrollTop() >= 124 ){
@@ -13,11 +13,14 @@ $(document).ready(function () {
             header.addClass("slideDown");
         }
     });
-    window.onscroll = function(){
-        var sl =- Math.max(document.body.scrollLeft,document.documentElement.scrollLeft);
-    }
-
-    // column
-
+    
+    
+    var logo = $('.logo');
+    $('.branding').mouseenter(function () {
+        logo.animate({left: 6},500);
+        setTimeout(function () {
+            logo.animate({left: 0},500);
+        },500)
+    });
 
 });
